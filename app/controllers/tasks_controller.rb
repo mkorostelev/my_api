@@ -1,13 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :update, :destroy]
 
-  def curl_get_example
-    render text: 'Thanks for sending a GET request with cURL!'
-  end
-
-  def curl_post_example
-    render text: "Thanks for sending a POST request with cURL! Payload: #{request.body.read}"
-  end
+  
 
   # GET /tasks
   def index
