@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :update, :destroy]
 
-  
+
 
   # GET /tasks
   def index
@@ -17,7 +17,6 @@ class TasksController < ApplicationController
 
   # POST /tasks
   def create
-    byebug
     @task = Task.new(task_params)
 
     if @task.save
@@ -44,13 +43,11 @@ class TasksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
-      byebug
       @task = Task.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def task_params
-      byebug
       params.require(:task).permit(:title, :completed, :order)
     end
 end
